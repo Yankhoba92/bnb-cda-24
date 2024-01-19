@@ -1,7 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RoomController!{% endblock %}
+{% block title %}What is your next sweet home?
+{% endblock %}
 
 {% block body %}
- {{ dump(rooms) }} 
+	<div class="p-5 mb-4 border-bottom border-2">
+		<h1 class="">
+			What is your next sweet home?
+		</h1>
+	</div>
+    <div class="container">
+        <div class="row p-4">
+            {% for item in rooms %}
+                <div class="col-md-4 col-sm-6 shadow-sm">
+                    <div class="card-room">
+                        <img src="{{ item.cover }}" class="img-fluid rounded-4" alt="{{ item.title }}">
+                        <div class="img-overlay">
+                            {# Form favorite #}
+                            <form action="POST" class="w-100 text-end">
+                                <input
+                                type="hidden" name="room" value={{ item.id }}>
+                                {# TODO: Conditional input:hidden for add or remove favorite #}
+                                <button type="submit" class="bg-transparent rounded-pill border-0 bg-light">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </form>
+                            {# Host info : img + firstname #}
+                            <div class="card-host-info">
+                                <img src={{ item.host.image }} alt="{{ item.host.firstname }} {{item.host.lastname }}" class="rounded-pill">
+                                <p class="">{{ item.host.firstname }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {# Host more infos #}
+                    <div>
+                        <p class="fw-bold">{{ item.title|slice(0,30) }}...</p>
+                        <p>start from {{ item.price }}€ per night</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}
