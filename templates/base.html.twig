@@ -39,12 +39,12 @@
 		<main>
 			{% block body %}{% endblock %}
 		</main>
-		<footer class="text-white">
-            <a href="#" class="">Paris</a>
-            <a href="#" class="">Las Vegas</a>
-            <a href="#" class="">Kyoto</a>
-            <a href="#" class="">Sydney</a>
-            <a href="#" class="">Hong Kong</a>
+		<footer class="d-flex gap-3 justify-content-center">
+            <a href={{ path('paris') }} class="text-decoration-none">Paris</a>
+            <a href={{ path('lasvegas') }} class="text-decoration-none">Las Vegas</a>
+            <a href={{ path('kyoto') }} class="text-decoration-none">Kyoto</a>
+            <a href={{ path('sydney') }} class="text-decoration-none">Sydney</a>
+            <a href={{ path('hongkong') }} class="text-decoration-none">Hong Kong</a>
         </footer>
 	</body>
 </html>
