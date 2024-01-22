@@ -85,13 +85,6 @@ footer {
 .pagination{
     --bs-pagination-border-width:0;
 }
-.pagination .page-item{
-    border-radius: 2vw;
-    -webkit-border-radius: 2vw;
-    -moz-border-radius: 2vw;
-    -ms-border-radius: 2vw;
-    -o-border-radius: 2vw;
-}
 .active>.page-link,  .page-link.active{
     background-color: var(--custom-dark);
 }
