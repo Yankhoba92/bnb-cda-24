@@ -17,6 +17,9 @@
 .bg-dark {
     background-color: var(--custom-dark) !important;
 }
+.text-main {
+    color: var(--custom-main) !important;
+}
 
 /* Titles & Fonts */
 h1, h2, h3, h4, h5, h6 {
@@ -82,9 +85,16 @@ footer {
 }
 
 /* Pagination */
-.pagination{
-    --bs-pagination-border-width:0;
+.pagination {
+    --bs-pagination-border-width: 0;
 }
-.active>.page-link,  .page-link.active{
+
+.active>.page-link, .page-link.active {
     background-color: var(--custom-dark);
+}
+
+/* Account page */
+.bnb-height {
+    max-height: 350px;
+
 }
